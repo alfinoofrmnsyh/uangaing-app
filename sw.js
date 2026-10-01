@@ -2,7 +2,7 @@
 // SERVICE WORKER - UANGAING APP PWA (v1.0.0)
 // ====================================================================
 
-const CACHE_NAME = 'uangaing-pwa-v2';
+const CACHE_NAME = 'uangaing-pwa-v3';
 
 // Asset statis lokal yang di-cache saat instalasi
 const STATIC_ASSETS = [
@@ -21,6 +21,7 @@ const EXTERNAL_ASSETS = [
   'https://cdn.tailwindcss.com',
   'https://cdn.jsdelivr.net/npm/chart.js',
   'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',
+  'https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js',
   'https://unpkg.com/lucide@latest',
   'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap'
 ];
