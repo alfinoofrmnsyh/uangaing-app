@@ -2,7 +2,7 @@
 // SERVICE WORKER - UANGAING APP PWA (v1.0.0)
 // ====================================================================
 
-const CACHE_NAME = 'uangaing-pwa-v1';
+const CACHE_NAME = 'uangaing-pwa-v2';
 
 // Asset statis lokal yang di-cache saat instalasi
 const STATIC_ASSETS = [

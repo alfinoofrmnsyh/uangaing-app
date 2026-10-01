@@ -213,6 +213,7 @@
                     <div class="relative cursor-pointer" onclick="Router.navigate('profile')">
                         <img id="dash-user-avatar"
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80"
+                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'"
                             alt="Avatar" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
                     </div>
                     <div>
@@ -538,6 +539,7 @@
                     <div class="relative">
                         <img id="profile-avatar-img"
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80"
+                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'"
                             alt="Avatar"
                             class="w-22 h-22 rounded-full object-cover border-[3.5px] border-fgc-lime shadow-xl"
                             style="width: 86px; height: 86px;">
@@ -710,45 +712,47 @@
              BOTTOM FLOATING NAVIGATION BAR (Sesuai Konsep di Gambar)
              ======================================================== -->
         <nav id="bottom-nav"
-            class="fixed bottom-4 left-4 right-4 max-w-md mx-auto bg-fgc-dark rounded-full p-2 flex justify-between items-center nav-glow z-40 hidden">
-            <!-- 1. Home Button -->
-            <div id="nav-btn-dashboard-wrap">
-                <button onclick="Router.navigate('dashboard')" class="nav-item-btn" data-target="dashboard">
-                    <i data-lucide="home" class="w-5 h-5"></i>
-                    <span class="nav-label">Home</span>
-                </button>
+            class="fixed bottom-4 left-4 right-4 max-w-[420px] mx-auto bg-fgc-dark rounded-full h-16 px-2 flex items-center justify-between nav-glow z-40 hidden select-none">
+            <!-- Left Group: Home & Wallet (Equal half: flex-1) -->
+            <div class="flex items-center justify-around flex-1 h-full px-0.5">
+                <div id="nav-btn-dashboard-wrap" class="flex items-center justify-center">
+                    <button onclick="Router.navigate('dashboard')"
+                        class="h-11 px-4 rounded-full bg-fgc-lime text-fgc-dark font-bold text-xs flex items-center gap-1.5 shadow-md transition-all active:scale-95 whitespace-nowrap">
+                        <i data-lucide="home" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Home</span>
+                    </button>
+                </div>
+                <div id="nav-btn-wallets-wrap" class="flex items-center justify-center">
+                    <button onclick="Router.navigate('wallets')"
+                        class="w-11 h-11 rounded-full bg-[#133922] text-[#8fae9b] hover:text-white flex items-center justify-center transition-all active:scale-95 flex-shrink-0">
+                        <i data-lucide="wallet" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- 2. Wallet Button -->
-            <div id="nav-btn-wallets-wrap">
-                <button onclick="Router.navigate('wallets')" class="nav-item-btn" data-target="wallets">
-                    <i data-lucide="wallet" class="w-5 h-5"></i>
-                    <span class="nav-label">Wallet</span>
-                </button>
-            </div>
-
-            <!-- 3. Elevated Center FAB (+) -->
-            <div class="relative -top-3.5">
+            <!-- Center Elevated FAB (+) - Always 100% Dead Center -->
+            <div class="relative flex items-center justify-center flex-shrink-0 w-14 h-full">
                 <button onclick="Transaction.openModal('expense')"
-                    class="bg-fgc-lime hover:bg-fgc-limehover text-fgc-dark w-14 h-14 rounded-full flex items-center justify-center lime-fab-glow active:scale-95 transition transform">
+                    class="absolute -top-3 w-14 h-14 bg-fgc-lime hover:bg-fgc-limehover text-fgc-dark rounded-full flex items-center justify-center lime-fab-glow active:scale-95 transition-transform duration-150 shadow-lg"
+                    title="Tambah Transaksi">
                     <i data-lucide="plus" class="w-8 h-8 stroke-[2.5]"></i>
                 </button>
             </div>
 
-            <!-- 4. Stats Button -->
-            <div id="nav-btn-stats-wrap">
-                <button onclick="Router.navigate('stats')" class="nav-item-btn" data-target="stats">
-                    <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
-                    <span class="nav-label">Stats</span>
-                </button>
-            </div>
-
-            <!-- 5. Profile Button -->
-            <div id="nav-btn-profile-wrap">
-                <button onclick="Router.navigate('profile')" class="nav-item-btn" data-target="profile">
-                    <i data-lucide="user" class="w-5 h-5"></i>
-                    <span class="nav-label">Profil</span>
-                </button>
+            <!-- Right Group: Stats & Profile (Equal half: flex-1) -->
+            <div class="flex items-center justify-around flex-1 h-full px-0.5">
+                <div id="nav-btn-stats-wrap" class="flex items-center justify-center">
+                    <button onclick="Router.navigate('stats')"
+                        class="w-11 h-11 rounded-full bg-[#133922] text-[#8fae9b] hover:text-white flex items-center justify-center transition-all active:scale-95 flex-shrink-0">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div id="nav-btn-profile-wrap" class="flex items-center justify-center">
+                    <button onclick="Router.navigate('profile')"
+                        class="w-11 h-11 rounded-full bg-[#133922] text-[#8fae9b] hover:text-white flex items-center justify-center transition-all active:scale-95 flex-shrink-0">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
         </nav>
     </div>
@@ -1039,6 +1043,7 @@
                     <div class="relative group cursor-pointer" onclick="document.getElementById('edit-user-file').click()" title="Ketuk untuk ganti foto">
                         <img id="edit-avatar-preview"
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80"
+                            onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'"
                             alt="Avatar Preview"
                             class="w-24 h-24 rounded-full object-cover border-4 border-fgc-lime shadow-lg">
                         <div class="absolute inset-0 bg-black/40 rounded-full flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
@@ -1613,18 +1618,18 @@
 
                     const isActive = activeTab === tab.id;
                     if (isActive) {
-                        // Active Pill: Lime green background, dark text, icon + label
+                        // Active Pill: Lime green background, dark text, icon + label (Exact h-11 = 44px)
                         wrap.innerHTML = `
-                            <button onclick="Router.navigate('${tab.id}')" class="bg-fgc-lime text-fgc-dark px-4 py-2 rounded-full font-bold text-xs flex items-center gap-1.5 shadow-md transition-all active:scale-95">
+                            <button onclick="Router.navigate('${tab.id}')" class="h-11 px-4 rounded-full bg-fgc-lime text-fgc-dark font-bold text-xs flex items-center gap-1.5 shadow-md transition-all active:scale-95 whitespace-nowrap">
                                 <i data-lucide="${tab.icon}" class="w-4 h-4 stroke-[2.5]"></i>
                                 <span>${tab.label}</span>
                             </button>
                         `;
                     } else {
-                        // Inactive: Dark circle with icon
+                        // Inactive: Dark circle with icon (Exact w-11 h-11 = 44px)
                         wrap.innerHTML = `
-                            <button onclick="Router.navigate('${tab.id}')" class="w-10 h-10 rounded-full bg-[#133922] text-[#8fae9b] hover:text-white flex items-center justify-center transition-all active:scale-95">
-                                <i data-lucide="${tab.icon}" class="w-4 h-4"></i>
+                            <button onclick="Router.navigate('${tab.id}')" class="w-11 h-11 rounded-full bg-[#133922] text-[#8fae9b] hover:text-white flex items-center justify-center transition-all active:scale-95 flex-shrink-0">
+                                <i data-lucide="${tab.icon}" class="w-5 h-5"></i>
                             </button>
                         `;
                     }
