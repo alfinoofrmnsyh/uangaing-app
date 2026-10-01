@@ -112,6 +112,7 @@ function doPost(e) {
         // Profil & Akun
         case 'getProfile': responseData = getProfile(userId); break;
         case 'updateProfile': responseData = updateProfile(userId, data); break;
+        case 'uploadAvatar': responseData = uploadAvatar(userId, data); break;
 
         // Kolaborasi & Invite
         case 'createInvite': responseData = createInvite(userId, data); break;
@@ -569,15 +570,85 @@ function getProfile(userId) {
 function updateProfile(userId, data) {
   const sheet = getSheet('Users');
   const values = sheet.getDataRange().getValues();
+  let updatedAvatar = data.avatar;
+
+  // Jika ada file gambar base64 yang dikirimkan bersama update profil
+  if (data.base64Data) {
+    const uploadRes = uploadAvatar(userId, data);
+    updatedAvatar = uploadRes.avatarUrl;
+  }
+
   for (let i = 1; i < values.length; i++) {
     if (values[i][0] === userId) {
       if (data.name) sheet.getRange(i + 1, 3).setValue(data.name);
-      if (data.avatar) sheet.getRange(i + 1, 6).setValue(data.avatar);
+      if (updatedAvatar) sheet.getRange(i + 1, 6).setValue(updatedAvatar);
       if (data.pin && String(data.pin).length === 6) sheet.getRange(i + 1, 4).setValue(data.pin);
-      return { message: "Profil berhasil diperbarui" };
+      return { 
+        message: "Profil berhasil diperbarui",
+        avatar: updatedAvatar
+      };
     }
   }
   throw new Error("User tidak ditemukan");
+}
+
+function uploadAvatar(userId, data) {
+  if (!data.base64Data) throw new Error("File gambar tidak ditemukan");
+
+  // 1. Dapatkan atau buat folder khusus foto profil di Google Drive
+  const folderName = "UangAing_Avatars";
+  let folder;
+  const folders = DriveApp.getFoldersByName(folderName);
+  if (folders.hasNext()) {
+    folder = folders.next();
+  } else {
+    folder = DriveApp.createFolder(folderName);
+  }
+
+  // Set sharing folder agar gambar bisa diakses publik (view-only)
+  try {
+    folder.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (e) {
+    console.warn("Folder setSharing note:", e);
+  }
+
+  // 2. Decode base64
+  let base64String = data.base64Data;
+  if (base64String.indexOf('base64,') > -1) {
+    base64String = base64String.split('base64,')[1];
+  }
+
+  const decoded = Utilities.base64Decode(base64String);
+  const mimeType = data.mimeType || 'image/jpeg';
+  const fileName = 'avatar_' + userId + '_' + new Date().getTime() + '.jpg';
+  const blob = Utilities.newBlob(decoded, mimeType, fileName);
+
+  // 3. Simpan file gambar ke Google Drive
+  const file = folder.createFile(blob);
+  try {
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (e) {
+    console.warn("File setSharing note:", e);
+  }
+
+  // Format link thumbnail Google Drive resmi yang stabil untuk <img> web
+  const avatarUrl = `https://drive.google.com/thumbnail?id=${file.getId()}&sz=w500`;
+
+  // 4. Update langsung ke sheet Users
+  const sheet = getSheet('Users');
+  const values = sheet.getDataRange().getValues();
+  for (let i = 1; i < values.length; i++) {
+    if (values[i][0] === userId) {
+      sheet.getRange(i + 1, 6).setValue(avatarUrl);
+      break;
+    }
+  }
+
+  return { 
+    avatarUrl: avatarUrl, 
+    fileId: file.getId(),
+    message: "Foto profil berhasil diupload ke Google Drive" 
+  };
 }
 
 // --------------------------------------------------------------------
