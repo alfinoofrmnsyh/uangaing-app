@@ -176,18 +176,18 @@
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                             <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i>
                         </div>
-                        <input type="email" id="login-email" value="rizky@email.com" required
+                        <input type="email" id="login-email" value="" required
                             class="w-full bg-gray-50 border border-gray-200 rounded-2xl pl-11 pr-4 py-3.5 text-sm text-fgc-dark outline-none focus:border-fgc-dark focus:bg-white focus:ring-2 focus:ring-fgc-lime/40 transition font-medium"
-                            placeholder="Alamat Email">
+                            placeholder="Alamat Email (cth: fino@email.com)">
                     </div>
 
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                             <i data-lucide="lock" class="w-5 h-5 text-gray-400"></i>
                         </div>
-                        <input type="password" id="login-pin" value="123456" required pattern="\d{6}"
+                        <input type="password" id="login-pin" value="" required pattern="\d{6}"
                             class="w-full bg-gray-50 border border-gray-200 rounded-2xl pl-11 pr-4 py-3.5 text-sm text-fgc-dark outline-none focus:border-fgc-dark focus:bg-white focus:ring-2 focus:ring-fgc-lime/40 transition font-medium"
-                            placeholder="PIN (6 digit)">
+                            placeholder="PIN (6 digit angka)">
                     </div>
 
                     <button type="submit"
@@ -216,9 +216,9 @@
                             alt="Avatar" class="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm">
                     </div>
                     <div>
-                        <p class="text-xs text-gray-500 font-medium leading-none mb-1">Selamat pagi</p>
+                        <p class="text-xs text-gray-500 font-medium leading-none mb-1" id="dash-greeting">Selamat datang</p>
                         <h2 class="text-xl font-extrabold text-fgc-dark tracking-tight leading-none"
-                            id="dash-user-name">Rizky</h2>
+                            id="dash-user-name">-</h2>
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
@@ -255,12 +255,12 @@
 
                 <!-- Balance & eye toggle -->
                 <div class="flex items-center gap-3 mb-1">
-                    <h1 class="text-3xl font-extrabold tracking-tight" id="dash-balance">Rp13.179.000</h1>
+                    <h1 class="text-3xl font-extrabold tracking-tight" id="dash-balance">Rp0</h1>
                     <button onclick="App.toggleHideBalance()" class="text-fgc-muted hover:text-white transition p-1">
                         <i data-lucide="eye" id="eye-icon-dash" class="w-5 h-5"></i>
                     </button>
                 </div>
-                <p class="text-fgc-muted text-xs mb-5 font-medium" id="dash-wallet-active-count">3 wallet aktif</p>
+                <p class="text-fgc-muted text-xs mb-5 font-medium" id="dash-wallet-active-count">0 wallet aktif</p>
 
                 <!-- Wallet Pills (Scrollable row) -->
                 <div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar pb-1" id="dash-wallet-chips">
@@ -314,8 +314,8 @@
                         </div>
                         <span class="text-xs font-medium text-gray-500">Pemasukan</span>
                     </div>
-                    <h3 class="text-xl font-black text-fgc-dark mb-0.5 tracking-tight" id="dash-income">Rp15rb</h3>
-                    <p class="text-[11px] text-gray-400 font-medium" id="dash-income-month">September 2026</p>
+                    <h3 class="text-xl font-black text-fgc-dark mb-0.5 tracking-tight" id="dash-income">Rp0</h3>
+                    <p class="text-[11px] text-gray-400 font-medium" id="dash-income-month">-</p>
                 </div>
 
                 <!-- Pengeluaran Card -->
@@ -326,8 +326,8 @@
                         </div>
                         <span class="text-xs font-medium text-gray-500">Pengeluaran</span>
                     </div>
-                    <h3 class="text-xl font-black text-fgc-dark mb-0.5 tracking-tight" id="dash-expense">Rp75rb</h3>
-                    <p class="text-[11px] text-gray-400 font-medium" id="dash-expense-month">September 2026</p>
+                    <h3 class="text-xl font-black text-fgc-dark mb-0.5 tracking-tight" id="dash-expense">Rp0</h3>
+                    <p class="text-[11px] text-gray-400 font-medium" id="dash-expense-month">-</p>
                 </div>
             </div>
 
@@ -383,7 +383,7 @@
             <div class="flex justify-between items-center mb-5 px-1">
                 <div>
                     <h1 class="text-2xl font-extrabold text-fgc-dark tracking-tight">Wallet Saya</h1>
-                    <p class="text-xs text-gray-500 font-medium" id="wallet-header-count">3 wallet aktif</p>
+                    <p class="text-xs text-gray-500 font-medium" id="wallet-header-count">0 wallet aktif</p>
                 </div>
                 <button onclick="Wallet.openAddModal()"
                     class="bg-fgc-lime hover:bg-fgc-limehover text-fgc-dark px-4 py-2 rounded-full font-bold text-xs flex items-center gap-1.5 shadow-sm active:scale-95 transition">
@@ -397,7 +397,7 @@
                 <div class="absolute -right-8 -top-8 w-32 h-32 bg-fgc-lime/10 rounded-full blur-2xl"></div>
                 <p class="text-fgc-muted text-xs font-medium mb-1">Total Saldo Semua Wallet</p>
                 <div class="flex items-center justify-center gap-2 mb-4">
-                    <h1 class="text-3xl font-black tracking-tight" id="wallet-total-all">Rp14.457.000</h1>
+                    <h1 class="text-3xl font-black tracking-tight" id="wallet-total-all">Rp0</h1>
                     <button onclick="App.toggleHideBalance()" class="text-fgc-muted hover:text-white transition">
                         <i data-lucide="eye" id="eye-icon-wallet" class="w-5 h-5"></i>
                     </button>
@@ -548,26 +548,26 @@
                     </div>
                 </div>
 
-                <h2 class="text-xl font-black mb-0.5 tracking-tight text-white" id="profile-name">Rizky</h2>
-                <p class="text-xs text-fgc-muted font-medium mb-3" id="profile-email">rizky@email.com</p>
+                <h2 class="text-xl font-black mb-0.5 tracking-tight text-white" id="profile-name">-</h2>
+                <p class="text-xs text-fgc-muted font-medium mb-3" id="profile-email">-</p>
 
                 <div
                     class="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1 rounded-full text-xs text-white/90 font-medium backdrop-blur-sm mb-5">
-                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-fgc-lime"></i> Bergabung September 2026
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-fgc-lime"></i> Akun Terverifikasi
                 </div>
 
                 <!-- Overlapping Stats Box (3 Columns) -->
                 <div class="bg-white rounded-2xl p-4 shadow-sm text-fgc-dark grid grid-cols-3 divide-x divide-gray-100">
                     <div class="text-center px-1">
-                        <p class="text-xl font-black" id="prof-stat-wallet">3</p>
+                        <p class="text-xl font-black" id="prof-stat-wallet">0</p>
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Wallet</p>
                     </div>
                     <div class="text-center px-1">
-                        <p class="text-xl font-black" id="prof-stat-tx">17</p>
+                        <p class="text-xl font-black" id="prof-stat-tx">0</p>
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Transaksi</p>
                     </div>
                     <div class="text-center px-1">
-                        <p class="text-xl font-black" id="prof-stat-cat">14</p>
+                        <p class="text-xl font-black" id="prof-stat-cat">0</p>
                         <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Kategori</p>
                     </div>
                 </div>
@@ -1197,7 +1197,7 @@
         const Api = {
             call: async (action, data = {}) => {
                 if (!App.config.API_URL || App.config.API_URL.includes('PLACEHOLDER')) {
-                    return null; // Local standalone demo mode
+                    return null;
                 }
                 try {
                     const res = await fetch(App.config.API_URL, {
@@ -1210,13 +1210,16 @@
                         })
                     });
                     const result = await res.json();
-                    if (!result.success) throw new Error(result.error?.message || 'Server error');
+                    if (!result.success) {
+                        const msg = result.error?.message || 'Server error';
+                        if (msg === 'UNAUTHORIZED') {
+                            Auth.handleLogout(true);
+                        }
+                        throw new Error(msg);
+                    }
                     return result.data;
                 } catch (err) {
-                    console.warn('API call error / fallback:', err.message);
-                    if (err.message === 'UNAUTHORIZED') {
-                        Auth.handleLogout(true);
-                    }
+                    console.warn('API call error:', err.message);
                     throw err;
                 }
             }
@@ -1230,21 +1233,10 @@
                 API_URL: 'https://script.google.com/macros/s/AKfycbzcaPzQ7wamBvLa9rb1gULDQ_y-LqrWJA4b1lTx3qLZzhLzW9PB4mksrt6v20tuPl5v7A/exec'
             },
             state: {
-                token: localStorage.getItem('ft_token') || 'demo-token',
-                user: JSON.parse(localStorage.getItem('ft_user')) || {
-                    id: 'U1',
-                    name: 'Rizky',
-                    email: 'rizky@email.com',
-                    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'
-                },
-                wallets: JSON.parse(localStorage.getItem('ft_wallets')) || [
-                    { walletId: 'W1', name: 'GoPay', type: 'E-Wallet', currentBalance: 733000, initialBalance: 733000, transactionsCount: 5, incomeMonth: 15000, expenseMonth: 57000 },
-                    { walletId: 'W2', name: 'BCA', type: 'Bank', currentBalance: 13495000, initialBalance: 13495000, transactionsCount: 10, incomeMonth: 1900000, expenseMonth: 0 },
-                    { walletId: 'W3', name: 'Tunai', type: 'Tunai', currentBalance: 229000, initialBalance: 229000, transactionsCount: 2, incomeMonth: 200000, expenseMonth: 50000 }
-                ],
-                // Default Categories (Pengeluaran & Pemasukan with Emoticons)
-                categories: JSON.parse(localStorage.getItem('ft_categories')) || [
-                    // Pengeluaran
+                token: localStorage.getItem('ft_token') || null,
+                user: JSON.parse(localStorage.getItem('ft_user')) || null,
+                wallets: [],
+                categories: [
                     { id: 'c_makan', name: 'Makanan', icon: '🍔', type: 'expense' },
                     { id: 'c_bensin', name: 'Bensin', icon: '⛽', type: 'expense' },
                     { id: 'c_jajan', name: 'Jajan', icon: '🧋', type: 'expense' },
@@ -1254,89 +1246,15 @@
                     { id: 'c_kesehatan', name: 'Kesehatan', icon: '💊', type: 'expense' },
                     { id: 'c_hiburan', name: 'Hiburan', icon: '🎮', type: 'expense' },
                     { id: 'c_lainnya_exp', name: 'Lainnya', icon: '📦', type: 'expense' },
-                    // Pemasukan
                     { id: 'c_gaji', name: 'Gaji', icon: '💰', type: 'income' },
                     { id: 'c_freelance', name: 'Freelance', icon: '💻', type: 'income' },
                     { id: 'c_investasi', name: 'Investasi', icon: '📈', type: 'income' },
                     { id: 'c_hadiah', name: 'Hadiah', icon: '🎁', type: 'income' },
                     { id: 'c_penjualan', name: 'Penjualan', icon: '🏷️', type: 'income' },
+                    { id: 'c_transfer', name: 'Transfer', icon: '⇄', type: 'income' },
                     { id: 'c_lainnya_inc', name: 'Lainnya', icon: '➕', type: 'income' }
                 ],
-                // Default Transactions (matches the screenshots)
-                transactions: JSON.parse(localStorage.getItem('ft_transactions')) || [
-                    {
-                        transactionId: 'TX101',
-                        walletId: 'W1',
-                        walletName: 'GoPay',
-                        type: 'expense',
-                        amount: 25000,
-                        categoryId: 'c_makan',
-                        categoryName: 'Makanan',
-                        categoryIcon: '🍔',
-                        description: 'Makan siang di kantin',
-                        date: new Date().toISOString()
-                    },
-                    {
-                        transactionId: 'TX102',
-                        walletId: 'W1',
-                        walletName: 'GoPay',
-                        type: 'expense',
-                        amount: 30000,
-                        categoryId: 'c_bensin',
-                        categoryName: 'Bensin',
-                        categoryIcon: '⛽',
-                        description: 'Bensin motor',
-                        date: new Date().toISOString()
-                    },
-                    {
-                        transactionId: 'TX103',
-                        walletId: 'W1',
-                        walletName: 'GoPay',
-                        type: 'expense',
-                        amount: 20000,
-                        categoryId: 'c_jajan',
-                        categoryName: 'Jajan',
-                        categoryIcon: '🧋',
-                        description: 'Kopi susu',
-                        date: new Date().toISOString()
-                    },
-                    {
-                        transactionId: 'TX104',
-                        walletId: 'W1',
-                        walletName: 'GoPay',
-                        type: 'income',
-                        amount: 15000,
-                        categoryId: 'c_hadiah',
-                        categoryName: 'Hadiah',
-                        categoryIcon: '🎁',
-                        description: 'Cashback GoPay',
-                        date: new Date().toISOString()
-                    },
-                    {
-                        transactionId: 'TX105',
-                        walletId: 'W2',
-                        walletName: 'BCA',
-                        type: 'income',
-                        amount: 1900000,
-                        categoryId: 'c_freelance',
-                        categoryName: 'Freelance',
-                        categoryIcon: '💻',
-                        description: 'Project Web Design',
-                        date: new Date(Date.now() - 86400000 * 2).toISOString()
-                    },
-                    {
-                        transactionId: 'TX106',
-                        walletId: 'W2',
-                        walletName: 'BCA',
-                        type: 'expense',
-                        amount: 770000,
-                        categoryId: 'c_belanja',
-                        categoryName: 'Belanja',
-                        categoryIcon: '🛍️',
-                        description: 'Belanja Mingguan',
-                        date: new Date(Date.now() - 86400000 * 3).toISOString()
-                    }
-                ],
+                transactions: [],
                 hideBalance: localStorage.getItem('ft_hide_balance') === 'true',
                 dashTxFilter: 'expense', // 'expense' | 'income'
                 statsMode: 'mingguan',   // 'mingguan' | 'bulanan'
@@ -1346,18 +1264,19 @@
             utils: {
                 formatRp: (num) => {
                     if (App.state.hideBalance) return 'Rp ••••••';
-                    return 'Rp' + new Intl.NumberFormat('id-ID').format(num);
+                    return 'Rp' + new Intl.NumberFormat('id-ID').format(Number(num || 0));
                 },
                 formatRpCompact: (num) => {
                     if (App.state.hideBalance) return '••••';
-                    if (num >= 1000000) {
-                        const jt = (num / 1000000).toFixed(1).replace('.', ',');
+                    const val = Number(num || 0);
+                    if (val >= 1000000) {
+                        const jt = (val / 1000000).toFixed(1).replace('.', ',');
                         return `Rp${jt.endsWith(',0') ? jt.slice(0, -2) : jt}jt`;
                     }
-                    if (num >= 1000) {
-                        return `Rp${Math.round(num / 1000)}rb`;
+                    if (val >= 1000) {
+                        return `Rp${Math.round(val / 1000)}rb`;
                     }
-                    return `Rp${num}`;
+                    return `Rp${val}`;
                 },
                 formatDateIndo: (dateStr) => {
                     const d = new Date(dateStr);
@@ -1371,14 +1290,18 @@
                     return `${months[d.getMonth()]} ${d.getFullYear()}`;
                 },
                 showLoader: (text = 'Memuat...') => {
-                    document.getElementById('loader-text').innerText = text;
-                    document.getElementById('loader').classList.remove('hidden');
+                    const el = document.getElementById('loader-text');
+                    if (el) el.innerText = text;
+                    const l = document.getElementById('loader');
+                    if (l) l.classList.remove('hidden');
                 },
                 hideLoader: () => {
-                    document.getElementById('loader').classList.add('hidden');
+                    const l = document.getElementById('loader');
+                    if (l) l.classList.add('hidden');
                 },
                 showToast: (msg, isError = false) => {
                     const t = document.getElementById('toast');
+                    if (!t) return;
                     t.innerText = msg;
                     t.className = `fixed top-5 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-full text-xs font-bold transition-all duration-300 shadow-2xl pointer-events-none ${isError ? 'bg-red-500 text-white' : 'bg-fgc-lime text-fgc-dark'}`;
                     t.classList.remove('hidden', 'opacity-0', '-translate-y-10');
@@ -1388,30 +1311,86 @@
                     }, 2500);
                 },
                 saveAllState: () => {
-                    localStorage.setItem('ft_wallets', JSON.stringify(App.state.wallets));
-                    localStorage.setItem('ft_categories', JSON.stringify(App.state.categories));
-                    localStorage.setItem('ft_transactions', JSON.stringify(App.state.transactions));
-                    localStorage.setItem('ft_user', JSON.stringify(App.state.user));
+                    if (App.state.user && App.state.user.id) {
+                        localStorage.setItem(`ft_wallets_${App.state.user.id}`, JSON.stringify(App.state.wallets));
+                        localStorage.setItem(`ft_tx_${App.state.user.id}`, JSON.stringify(App.state.transactions));
+                        localStorage.setItem('ft_user', JSON.stringify(App.state.user));
+                    }
                     localStorage.setItem('ft_hide_balance', App.state.hideBalance);
                 }
             },
 
-            init: () => {
+            // Sinkronisasi data user aktif dari Google Sheets backend
+            syncData: async () => {
+                if (!App.state.token) return;
+                try {
+                    const [wallets, txs, cats] = await Promise.all([
+                        Api.call('getWallets').catch(err => { console.warn('getWallets error:', err); return null; }),
+                        Api.call('getTransactions').catch(err => { console.warn('getTransactions error:', err); return null; }),
+                        Api.call('getCategories').catch(err => { console.warn('getCategories error:', err); return null; })
+                    ]);
+
+                    if (wallets && Array.isArray(wallets)) {
+                        App.state.wallets = wallets;
+                        if (App.state.user?.id) localStorage.setItem(`ft_wallets_${App.state.user.id}`, JSON.stringify(wallets));
+                    }
+                    if (txs && Array.isArray(txs)) {
+                        App.state.transactions = txs;
+                        if (App.state.user?.id) localStorage.setItem(`ft_tx_${App.state.user.id}`, JSON.stringify(txs));
+                    }
+                    if (cats && Array.isArray(cats) && cats.length) {
+                        App.state.categories = cats.map(c => ({
+                            id: c.categoryId || c.id,
+                            name: c.name,
+                            icon: c.icon,
+                            type: c.type,
+                            userId: c.userId
+                        }));
+                    }
+
+                    Report.fetchDashboard();
+                    Wallet.fetchList(true);
+                    if (document.getElementById('view-stats').classList.contains('active')) {
+                        Report.renderStatsView();
+                    }
+                    if (document.getElementById('view-profile').classList.contains('active')) {
+                        Auth.renderProfile();
+                    }
+                } catch (err) {
+                    console.error("syncData error:", err);
+                }
+            },
+
+            init: async () => {
                 lucide.createIcons();
 
-                // Sinkronkan preferensi toggle hide balance
                 const prefSwitch = document.getElementById('pref-hide-balance');
                 if (prefSwitch) prefSwitch.checked = App.state.hideBalance;
 
-                // Sync UI User
-                if (App.state.user) {
-                    Auth.renderUserProfile();
-                }
+                // Cek otentikasi login
+                if (App.state.token && App.state.user && App.state.user.id) {
+                    // Ambil cache khusus akun ini untuk render instan
+                    try {
+                        const cachedW = localStorage.getItem(`ft_wallets_${App.state.user.id}`);
+                        if (cachedW) App.state.wallets = JSON.parse(cachedW);
+                        const cachedTx = localStorage.getItem(`ft_tx_${App.state.user.id}`);
+                        if (cachedTx) App.state.transactions = JSON.parse(cachedTx);
+                    } catch (e) {
+                        console.warn(e);
+                    }
 
-                // Initial Routing
-                if (App.state.token) {
+                    Auth.renderUserProfile();
                     Router.navigate('dashboard');
+                    // Muat data terbaru dari backend Apps Script
+                    App.syncData();
                 } else {
+                    // Jika belum login atau sesi kosong, SELALU ARAHKAN KE LOGIN
+                    App.state.token = null;
+                    App.state.user = null;
+                    App.state.wallets = [];
+                    App.state.transactions = [];
+                    localStorage.removeItem('ft_token');
+                    localStorage.removeItem('ft_user');
                     Router.navigate('login');
                 }
             },
@@ -1424,7 +1403,7 @@
 
                 App.updateEyeIcons();
                 Report.fetchDashboard();
-                Wallet.fetchList();
+                Wallet.fetchList(true);
                 App.utils.showToast(App.state.hideBalance ? 'Saldo disembunyikan' : 'Saldo ditampilkan');
             },
 
@@ -1433,7 +1412,7 @@
                 App.utils.saveAllState();
                 App.updateEyeIcons();
                 Report.fetchDashboard();
-                Wallet.fetchList();
+                Wallet.fetchList(true);
             },
 
             updateEyeIcons: () => {
@@ -1459,11 +1438,11 @@
                     container.innerHTML = '<p class="text-xs text-gray-400 text-center py-4">Mulai ketik untuk mencari transaksi.</p>';
                     return;
                 }
-                const matches = App.state.transactions.filter(t =>
-                    t.description.toLowerCase().includes(query) ||
-                    t.categoryName.toLowerCase().includes(query) ||
+                const matches = (App.state.transactions || []).filter(t =>
+                    (t.description || '').toLowerCase().includes(query) ||
+                    (t.categoryName || '').toLowerCase().includes(query) ||
                     (t.walletName || '').toLowerCase().includes(query) ||
-                    String(t.amount).includes(query)
+                    String(t.amount || '').includes(query)
                 );
 
                 if (!matches.length) {
@@ -1509,12 +1488,18 @@
             openTransferModal: () => {
                 const selFrom = document.getElementById('transfer-from-wallet');
                 const selTo = document.getElementById('transfer-to-wallet');
-                const opts = App.state.wallets.map(w => `<option value="${w.walletId}">${w.name} (${App.utils.formatRp(w.currentBalance)})</option>`).join('');
+                const wallets = App.state.wallets || [];
+                if (!wallets.length) {
+                    App.utils.showToast("Buat minimal 2 wallet untuk transfer saldo!", true);
+                    return;
+                }
+                const opts = wallets.map(w => `<option value="${w.walletId}">${w.name} (${App.utils.formatRp(w.currentBalance || 0)})</option>`).join('');
                 selFrom.innerHTML = opts;
                 selTo.innerHTML = opts;
-                if (App.state.wallets.length > 1) selTo.selectedIndex = 1;
+                if (wallets.length > 1) selTo.selectedIndex = 1;
 
                 document.getElementById('transfer-amount').value = '';
+                document.getElementById('transfer-note').value = '';
                 const modal = document.getElementById('transfer-modal');
                 const content = document.getElementById('transfer-modal-content');
                 modal.classList.remove('hidden');
@@ -1525,61 +1510,44 @@
                 content.classList.add('translate-y-full');
                 setTimeout(() => document.getElementById('transfer-modal').classList.add('hidden'), 250);
             },
-            handleTransferSubmit: (e) => {
+            handleTransferSubmit: async (e) => {
                 e.preventDefault();
                 const fromId = document.getElementById('transfer-from-wallet').value;
                 const toId = document.getElementById('transfer-to-wallet').value;
                 const amount = parseFloat(document.getElementById('transfer-amount').value);
-                const note = document.getElementById('transfer-note').value || 'Transfer Saldo';
+                const note = document.getElementById('transfer-note').value.trim() || 'Transfer Saldo';
 
                 if (fromId === toId) {
                     App.utils.showToast("Pilih wallet asal dan tujuan yang berbeda!", true);
                     return;
                 }
+                if (!amount || amount <= 0) {
+                    App.utils.showToast("Masukkan nominal transfer yang valid!", true);
+                    return;
+                }
 
                 const wFrom = App.state.wallets.find(w => w.walletId === fromId);
-                const wTo = App.state.wallets.find(w => w.walletId === toId);
-
-                if (wFrom.currentBalance < amount) {
+                if (wFrom && wFrom.currentBalance < amount) {
                     App.utils.showToast("Saldo wallet asal tidak mencukupi!", true);
                     return;
                 }
 
-                wFrom.currentBalance -= amount;
-                wTo.currentBalance += amount;
-
-                // Tambahkan catatan transaksi
-                App.state.transactions.unshift({
-                    transactionId: 'TX' + Date.now(),
-                    walletId: fromId,
-                    walletName: wFrom.name,
-                    type: 'expense',
-                    amount: amount,
-                    categoryId: 'c_transfer',
-                    categoryName: 'Transfer',
-                    categoryIcon: '⇄',
-                    description: `Transfer ke ${wTo.name}: ${note}`,
-                    date: new Date().toISOString()
-                });
-
-                App.state.transactions.unshift({
-                    transactionId: 'TX' + (Date.now() + 1),
-                    walletId: toId,
-                    walletName: wTo.name,
-                    type: 'income',
-                    amount: amount,
-                    categoryId: 'c_transfer',
-                    categoryName: 'Transfer',
-                    categoryIcon: '⇄',
-                    description: `Terima dari ${wFrom.name}: ${note}`,
-                    date: new Date().toISOString()
-                });
-
-                App.utils.saveAllState();
-                App.closeTransferModal();
-                App.utils.showToast("Transfer berhasil!");
-                Report.fetchDashboard();
-                Wallet.fetchList();
+                App.utils.showLoader('Memproses transfer...');
+                try {
+                    await Api.call('transferWallet', {
+                        fromWalletId: fromId,
+                        toWalletId: toId,
+                        amount: amount,
+                        description: note
+                    });
+                    App.closeTransferModal();
+                    App.utils.showToast("Transfer berhasil!");
+                    await App.syncData();
+                } catch (err) {
+                    App.utils.showToast("Transfer gagal: " + err.message, true);
+                } finally {
+                    App.utils.hideLoader();
+                }
             }
         };
 
@@ -1600,7 +1568,7 @@
                     Router.renderBottomNav(viewId);
 
                     if (viewId === 'dashboard') Report.fetchDashboard();
-                    if (viewId === 'wallets') Wallet.fetchList();
+                    if (viewId === 'wallets') Wallet.fetchList(true);
                     if (viewId === 'stats') Report.renderStatsView();
                     if (viewId === 'profile') Auth.renderProfile();
                 }
@@ -1648,49 +1616,109 @@
         const Auth = {
             handleLogin: async (e) => {
                 e.preventDefault();
-                const email = document.getElementById('login-email').value;
-                const pin = document.getElementById('login-pin').value;
+                const email = document.getElementById('login-email').value.trim();
+                const pin = document.getElementById('login-pin').value.trim();
 
-                App.utils.showLoader('Otentikasi...');
+                if (!email || !pin) {
+                    App.utils.showToast("Email dan PIN wajib diisi!", true);
+                    return;
+                }
+
+                App.utils.showLoader('Otentikasi akun...');
                 try {
                     let res = null;
-                    if (!App.config.API_URL.includes('PLACEHOLDER')) {
-                        try {
-                            res = await Api.call('login', { email, pin });
-                        } catch (err) {
-                            // Coba registrasi jika belum ada
-                            res = await Api.call('register', { email, pin, name: email.split('@')[0] });
+                    try {
+                        res = await Api.call('login', { email, pin });
+                    } catch (err) {
+                        // Coba registrasi otomatis jika email belum terdaftar
+                        if (err.message && (err.message.includes('Email atau PIN salah') || err.message.includes('UNAUTHORIZED'))) {
+                            try {
+                                const namePart = email.split('@')[0];
+                                const formattedName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+                                res = await Api.call('register', { email, pin, name: formattedName });
+                            } catch (regErr) {
+                                throw new Error(err.message);
+                            }
+                        } else {
+                            throw err;
                         }
                     }
-                    if (res && res.token) {
-                        App.state.token = res.token;
-                        if (res.user) App.state.user = res.user;
-                    } else {
-                        const namePart = email.split('@')[0];
-                        const userName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
-                        App.state.token = 'tk_' + Date.now();
-                        App.state.user = {
-                            id: 'U_' + Date.now(),
-                            name: userName || 'Rizky',
-                            email: email,
-                            avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80'
-                        };
+
+                    if (!res || !res.token) {
+                        throw new Error("Gagal mendapatkan sesi login");
                     }
-                    App.utils.saveAllState();
-                    App.utils.showToast('Selamat datang, ' + App.state.user.name);
+
+                    // Reset state memori akun sebelumnya agar tidak terjadi kebocoran data
+                    App.state.wallets = [];
+                    App.state.transactions = [];
+                    App.state.token = res.token;
+                    App.state.user = res.user;
+
+                    localStorage.setItem('ft_token', res.token);
+                    localStorage.setItem('ft_user', JSON.stringify(res.user));
+
+                    // Muat cache user jika pernah tersimpan di perangkat ini
+                    try {
+                        const cachedW = localStorage.getItem(`ft_wallets_${res.user.id}`);
+                        if (cachedW) App.state.wallets = JSON.parse(cachedW);
+                        const cachedTx = localStorage.getItem(`ft_tx_${res.user.id}`);
+                        if (cachedTx) App.state.transactions = JSON.parse(cachedTx);
+                    } catch (e) {}
+
                     Auth.renderUserProfile();
                     Router.navigate('dashboard');
+                    App.utils.showToast('Selamat datang, ' + (res.user.name || 'User'));
+
+                    // Tarik data spesifik user dari Google Sheets
+                    await App.syncData();
                 } catch (err) {
-                    App.utils.showToast(err.message, true);
+                    App.utils.showToast(err.message || 'Login gagal', true);
                 } finally {
                     App.utils.hideLoader();
                 }
             },
 
-            handleLogout: () => {
-                if (confirm('Yakin ingin keluar dari akun?')) {
+            handleLogout: async (force = false) => {
+                if (force || confirm('Yakin ingin keluar dari akun?')) {
+                    try {
+                        if (App.state.token) {
+                            await Api.call('logout').catch(() => {});
+                        }
+                    } catch (e) {}
+
+                    // Hapus token & sesi
                     App.state.token = null;
+                    App.state.user = null;
+                    App.state.wallets = [];
+                    App.state.transactions = [];
+
                     localStorage.removeItem('ft_token');
+                    localStorage.removeItem('ft_user');
+                    localStorage.removeItem('ft_wallets');
+                    localStorage.removeItem('ft_transactions');
+
+                    // Reset form input login
+                    const emailInput = document.getElementById('login-email');
+                    const pinInput = document.getElementById('login-pin');
+                    if (emailInput) emailInput.value = '';
+                    if (pinInput) pinInput.value = '';
+
+                    // Bersihkan tampilan UI agar tidak menampilkan sisa data akun lama
+                    const dName = document.getElementById('dash-user-name');
+                    if (dName) dName.innerText = '-';
+                    const dBal = document.getElementById('dash-balance');
+                    if (dBal) dBal.innerText = 'Rp0';
+                    const dCount = document.getElementById('dash-wallet-active-count');
+                    if (dCount) dCount.innerText = '0 wallet aktif';
+                    const dChips = document.getElementById('dash-wallet-chips');
+                    if (dChips) dChips.innerHTML = '';
+                    const dInc = document.getElementById('dash-income');
+                    if (dInc) dInc.innerText = 'Rp0';
+                    const dExp = document.getElementById('dash-expense');
+                    if (dExp) dExp.innerText = 'Rp0';
+                    const wList = document.getElementById('wallet-full-list');
+                    if (wList) wList.innerHTML = '';
+
                     App.utils.showToast('Berhasil keluar');
                     Router.navigate('login');
                 }
@@ -1700,35 +1728,46 @@
                 const user = App.state.user;
                 if (!user) return;
 
+                const hour = new Date().getHours();
+                let greeting = 'Selamat pagi';
+                if (hour >= 11 && hour < 15) greeting = 'Selamat siang';
+                else if (hour >= 15 && hour < 18) greeting = 'Selamat sore';
+                else if (hour >= 18 || hour < 4) greeting = 'Selamat malam';
+
+                const dGreet = document.getElementById('dash-greeting');
                 const dName = document.getElementById('dash-user-name');
                 const dAvatar = document.getElementById('dash-user-avatar');
                 const pName = document.getElementById('profile-name');
                 const pEmail = document.getElementById('profile-email');
                 const pAvatar = document.getElementById('profile-avatar-img');
 
-                if (dName) dName.innerText = user.name || 'Rizky';
+                if (dGreet) dGreet.innerText = greeting;
+                if (dName) dName.innerText = user.name || 'Pengguna';
                 if (dAvatar && user.avatar) dAvatar.src = user.avatar;
-                if (pName) pName.innerText = user.name || 'Rizky';
-                if (pEmail) pEmail.innerText = user.email || 'rizky@email.com';
+                if (pName) pName.innerText = user.name || 'Pengguna';
+                if (pEmail) pEmail.innerText = user.email || '';
                 if (pAvatar && user.avatar) pAvatar.src = user.avatar;
             },
 
             renderProfile: () => {
                 Auth.renderUserProfile();
                 // Update stats count in Profile card
-                const wCount = App.state.wallets.length;
-                const txCount = App.state.transactions.length;
-                const catCount = App.state.categories.length;
+                const wCount = (App.state.wallets || []).length;
+                const txCount = (App.state.transactions || []).length;
+                const catCount = (App.state.categories || []).length;
 
-                document.getElementById('prof-stat-wallet').innerText = wCount;
-                document.getElementById('prof-stat-tx').innerText = txCount;
-                document.getElementById('prof-stat-cat').innerText = catCount;
+                const pw = document.getElementById('prof-stat-wallet');
+                const pt = document.getElementById('prof-stat-tx');
+                const pc = document.getElementById('prof-stat-cat');
+                if (pw) pw.innerText = wCount;
+                if (pt) pt.innerText = txCount;
+                if (pc) pc.innerText = catCount;
             },
 
             openEditProfileModal: () => {
-                document.getElementById('edit-user-name').value = App.state.user.name || 'Rizky';
-                document.getElementById('edit-user-email').value = App.state.user.email || 'rizky@email.com';
-                document.getElementById('edit-user-avatar').value = App.state.user.avatar || '';
+                document.getElementById('edit-user-name').value = App.state.user?.name || '';
+                document.getElementById('edit-user-email').value = App.state.user?.email || '';
+                document.getElementById('edit-user-avatar').value = App.state.user?.avatar || '';
 
                 const modal = document.getElementById('profile-modal');
                 const content = document.getElementById('profile-modal-content');
@@ -1742,17 +1781,27 @@
                 setTimeout(() => document.getElementById('profile-modal').classList.add('hidden'), 250);
             },
 
-            handleSaveProfile: (e) => {
+            handleSaveProfile: async (e) => {
                 e.preventDefault();
-                App.state.user.name = document.getElementById('edit-user-name').value;
-                App.state.user.email = document.getElementById('edit-user-email').value;
-                const av = document.getElementById('edit-user-avatar').value;
-                if (av) App.state.user.avatar = av;
+                const name = document.getElementById('edit-user-name').value.trim();
+                const av = document.getElementById('edit-user-avatar').value.trim();
 
-                App.utils.saveAllState();
-                Auth.renderUserProfile();
-                Auth.closeEditProfileModal();
-                App.utils.showToast('Profil berhasil diperbarui');
+                App.utils.showLoader('Menyimpan profil...');
+                try {
+                    await Api.call('updateProfile', { name, avatar: av });
+                    if (App.state.user) {
+                        App.state.user.name = name;
+                        if (av) App.state.user.avatar = av;
+                        localStorage.setItem('ft_user', JSON.stringify(App.state.user));
+                    }
+                    Auth.renderUserProfile();
+                    Auth.closeEditProfileModal();
+                    App.utils.showToast('Profil berhasil diperbarui');
+                } catch (err) {
+                    App.utils.showToast("Gagal menyimpan profil: " + err.message, true);
+                } finally {
+                    App.utils.hideLoader();
+                }
             }
         };
 
@@ -1763,6 +1812,26 @@
             currentType: 'expense',
             quickEmojisExpense: ['🍔', '⛽', '🧋', '🛍️', '🚗', '💡', '💊', '🎮', '☕', '🍕', '🍜', '🛒', '✈️', '🏥', '💵', '⚽'],
             quickEmojisIncome: ['💰', '💻', '📈', '🎁', '🏷️', '💵', '🏦', '🪙', '💎', '🏆', '🤝', '🏢', '🏷️', '📦', '⭐', '➕'],
+
+            loadCategories: async (skipApi = false) => {
+                if (!skipApi && App.state.token) {
+                    try {
+                        const data = await Api.call('getCategories');
+                        if (data && Array.isArray(data) && data.length) {
+                            App.state.categories = data.map(c => ({
+                                id: c.categoryId || c.id,
+                                name: c.name,
+                                icon: c.icon,
+                                type: c.type,
+                                userId: c.userId
+                            }));
+                        }
+                    } catch (err) {
+                        console.warn("Gagal memuat kategori:", err);
+                    }
+                }
+                Category.renderCategoryList();
+            },
 
             openModal: () => {
                 Category.switchType(Category.currentType);
@@ -1777,7 +1846,6 @@
                 content.classList.add('translate-y-full');
                 setTimeout(() => {
                     document.getElementById('category-modal').classList.add('hidden');
-                    // Refresh chips in transaction modal if open
                     Transaction.renderCategoryChips();
                 }, 250);
             },
@@ -1804,6 +1872,7 @@
 
             renderQuickEmojiPicker: (emojis) => {
                 const container = document.getElementById('emoji-quick-picker');
+                if (!container) return;
                 container.innerHTML = emojis.map(em => `
                     <button type="button" onclick="Category.setEmoji('${em}')" class="h-9 w-9 rounded-xl bg-white hover:bg-emerald-50 border border-gray-100 flex items-center justify-center text-lg active:scale-95 transition">
                         ${em}
@@ -1816,7 +1885,7 @@
                 document.getElementById('new-cat-emoji').value = em;
             },
 
-            addCategory: () => {
+            addCategory: async () => {
                 const name = document.getElementById('new-cat-name').value.trim();
                 const emoji = document.getElementById('new-cat-emoji').value.trim() || '🏷️';
 
@@ -1825,33 +1894,42 @@
                     return;
                 }
 
-                const newCat = {
-                    id: 'c_' + Date.now(),
-                    name: name,
-                    icon: emoji,
-                    type: Category.currentType
-                };
-
-                App.state.categories.push(newCat);
-                App.utils.saveAllState();
-
-                document.getElementById('new-cat-name').value = '';
-                Category.renderCategoryList();
-                App.utils.showToast(`Kategori ${emoji} ${name} berhasil ditambahkan!`);
+                App.utils.showLoader('Menambahkan kategori...');
+                try {
+                    await Api.call('createCategory', {
+                        name: name,
+                        icon: emoji,
+                        type: Category.currentType
+                    });
+                    document.getElementById('new-cat-name').value = '';
+                    App.utils.showToast(`Kategori ${emoji} ${name} berhasil ditambahkan!`);
+                    await Category.loadCategories(false);
+                } catch (err) {
+                    App.utils.showToast("Gagal menambah kategori: " + err.message, true);
+                } finally {
+                    App.utils.hideLoader();
+                }
             },
 
-            deleteCategory: (catId) => {
+            deleteCategory: async (catId) => {
                 if (confirm("Hapus kategori ini?")) {
-                    App.state.categories = App.state.categories.filter(c => c.id !== catId);
-                    App.utils.saveAllState();
-                    Category.renderCategoryList();
-                    App.utils.showToast("Kategori dihapus.");
+                    App.utils.showLoader('Menghapus kategori...');
+                    try {
+                        await Api.call('deleteCategory', { categoryId: catId });
+                        App.utils.showToast("Kategori dihapus.");
+                        await Category.loadCategories(false);
+                    } catch (err) {
+                        App.utils.showToast(err.message, true);
+                    } finally {
+                        App.utils.hideLoader();
+                    }
                 }
             },
 
             renderCategoryList: () => {
                 const container = document.getElementById('cat-list-container');
-                const filtered = App.state.categories.filter(c => c.type === Category.currentType);
+                if (!container) return;
+                const filtered = (App.state.categories || []).filter(c => c.type === Category.currentType);
 
                 if (!filtered.length) {
                     container.innerHTML = '<p class="text-xs text-gray-400 py-3 text-center">Belum ada kategori.</p>';
@@ -1877,75 +1955,110 @@
          * Wallet Management Module (Image 4 & Backend Sync)
          */
         const Wallet = {
-            fetchList: () => {
-                const wallets = App.state.wallets;
-                const total = wallets.reduce((sum, w) => sum + Number(w.currentBalance), 0);
+            fetchList: async (skipApi = false) => {
+                if (!skipApi && App.state.token) {
+                    try {
+                        const data = await Api.call('getWallets');
+                        if (data && Array.isArray(data)) {
+                            App.state.wallets = data;
+                            if (App.state.user?.id) {
+                                localStorage.setItem(`ft_wallets_${App.state.user.id}`, JSON.stringify(data));
+                            }
+                        }
+                    } catch (err) {
+                        console.warn("Gagal memuat wallet dari server:", err);
+                    }
+                }
+
+                const wallets = App.state.wallets || [];
+                const total = wallets.reduce((sum, w) => sum + Number(w.currentBalance || 0), 0);
 
                 // Update Header & Total
-                document.getElementById('wallet-header-count').innerText = `${wallets.length} wallet aktif`;
-                document.getElementById('wallet-total-all').innerText = App.utils.formatRp(total);
+                const hCount = document.getElementById('wallet-header-count');
+                if (hCount) hCount.innerText = `${wallets.length} wallet aktif`;
+                const totalAll = document.getElementById('wallet-total-all');
+                if (totalAll) totalAll.innerText = App.utils.formatRp(total);
 
                 // Mini summary pills under total (E-Wallet, Bank, Tunai)
-                const pillsHtml = wallets.map(w => `
-                    <div class="bg-white/10 border border-white/15 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-white">
-                        <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-3.5 h-3.5 text-fgc-lime"></i>
-                        <span class="text-fgc-muted text-[11px]">${w.type || w.name}</span>
-                        <span class="font-bold">${App.utils.formatRpCompact(w.currentBalance)}</span>
-                    </div>
-                `).join('');
-                document.getElementById('wallet-summary-pills').innerHTML = pillsHtml;
+                const pillsWrap = document.getElementById('wallet-summary-pills');
+                if (pillsWrap) {
+                    if (!wallets.length) {
+                        pillsWrap.innerHTML = '<span class="text-xs text-fgc-muted">Belum ada wallet</span>';
+                    } else {
+                        pillsWrap.innerHTML = wallets.map(w => `
+                            <div class="bg-white/10 border border-white/15 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-white">
+                                <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-3.5 h-3.5 text-fgc-lime"></i>
+                                <span class="text-fgc-muted text-[11px]">${w.type || w.name}</span>
+                                <span class="font-bold">${App.utils.formatRpCompact(w.currentBalance || 0)}</span>
+                            </div>
+                        `).join('');
+                    }
+                }
 
                 // Detailed Cards List (Matches Image 4)
-                const listHtml = wallets.map(w => {
-                    const txCount = App.state.transactions.filter(t => t.walletId === w.walletId).length;
-                    return `
-                    <div class="dark-card-grad rounded-[2rem] p-5 text-white shadow-md relative overflow-hidden">
-                        <!-- Top Row: Icon + Name + Category + Chevron -->
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                                    <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-5 h-5 text-fgc-lime"></i>
+                const listWrap = document.getElementById('wallet-full-list');
+                if (listWrap) {
+                    if (!wallets.length) {
+                        listWrap.innerHTML = `
+                            <div class="bg-white rounded-[2rem] p-8 text-center shadow-sm">
+                                <p class="text-sm font-bold text-fgc-dark mb-1">Belum Ada Wallet</p>
+                                <p class="text-xs text-gray-400 mb-4">Tambahkan wallet pertama Anda untuk mulai mengelola keuangan.</p>
+                                <button onclick="Wallet.openAddModal()" class="px-5 py-2.5 rounded-full bg-fgc-dark text-fgc-lime text-xs font-bold shadow-md">
+                                    + Tambah Wallet Sekarang
+                                </button>
+                            </div>
+                        `;
+                    } else {
+                        listWrap.innerHTML = wallets.map(w => {
+                            const txCount = (App.state.transactions || []).filter(t => t.walletId === w.walletId).length;
+                            return `
+                            <div class="dark-card-grad rounded-[2rem] p-5 text-white shadow-md relative overflow-hidden">
+                                <!-- Top Row: Icon + Name + Category + Chevron -->
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                                            <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-5 h-5 text-fgc-lime"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-extrabold text-base leading-tight">${w.name}</h3>
+                                            <p class="text-[11px] text-fgc-muted font-medium">${w.type || 'E-Wallet'} • ${txCount} transaksi</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="Wallet.openTransactions('${w.walletId}')" class="text-fgc-muted hover:text-white p-1">
+                                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                                    </button>
                                 </div>
-                                <div>
-                                    <h3 class="font-extrabold text-base leading-tight">${w.name}</h3>
-                                    <p class="text-[11px] text-fgc-muted font-medium">${w.type || 'E-Wallet'} • ${txCount} transaksi</p>
+
+                                <!-- Amount -->
+                                <h2 class="text-2xl font-black mb-2 tracking-tight">${App.utils.formatRp(w.currentBalance || 0)}</h2>
+
+                                <!-- Monthly summary breakdown -->
+                                <div class="flex items-center gap-2 text-xs text-fgc-muted font-medium mb-4">
+                                    <span class="flex items-center gap-1 text-fgc-softgreen font-semibold">
+                                        <i data-lucide="arrow-down-left" class="w-3.5 h-3.5"></i> ${App.utils.formatRpCompact(w.incomeMonth || 0)}
+                                    </span>
+                                    <span class="flex items-center gap-1 text-fgc-softred font-semibold">
+                                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> ${App.utils.formatRpCompact(w.expenseMonth || 0)}
+                                    </span>
+                                    <span class="text-[11px] text-fgc-muted">bulan ini</span>
+                                </div>
+
+                                <!-- Action Buttons: Edit, Share & Delete -->
+                                <div class="flex items-center gap-2 pt-1 border-t border-white/10">
+                                    <button onclick="Wallet.openEditModal('${w.walletId}')" class="flex-1 bg-white/10 hover:bg-white/15 active:scale-98 transition py-2.5 rounded-full text-xs font-bold text-white flex items-center justify-center gap-1.5 backdrop-blur-sm">
+                                        <i data-lucide="edit-3" class="w-3.5 h-3.5"></i> Edit
+                                    </button>
+                                    <button onclick="Wallet.share('${w.walletId}')" title="Bagikan QR" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-fgc-lime">
+                                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                                    </button>
+                                    <button onclick="Wallet.deleteWallet('${w.walletId}')" title="Hapus" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-500/20 active:scale-95 transition flex items-center justify-center text-fgc-softred">
+                                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <button onclick="Wallet.openTransactions('${w.walletId}')" class="text-fgc-muted hover:text-white p-1">
-                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                            </button>
-                        </div>
-
-                        <!-- Amount -->
-                        <h2 class="text-2xl font-black mb-2 tracking-tight">${App.utils.formatRp(w.currentBalance)}</h2>
-
-                        <!-- Monthly summary breakdown -->
-                        <div class="flex items-center gap-2 text-xs text-fgc-muted font-medium mb-4">
-                            <span class="flex items-center gap-1 text-fgc-softgreen font-semibold">
-                                <i data-lucide="arrow-down-left" class="w-3.5 h-3.5"></i> ${App.utils.formatRpCompact(w.incomeMonth || 0)}
-                            </span>
-                            <span class="flex items-center gap-1 text-fgc-softred font-semibold">
-                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> ${App.utils.formatRpCompact(w.expenseMonth || 0)}
-                            </span>
-                            <span class="text-[11px] text-fgc-muted">bulan ini</span>
-                        </div>
-
-                        <!-- Action Buttons: Edit, Share & Delete -->
-                        <div class="flex items-center gap-2 pt-1 border-t border-white/10">
-                            <button onclick="Wallet.openEditModal('${w.walletId}')" class="flex-1 bg-white/10 hover:bg-white/15 active:scale-98 transition py-2.5 rounded-full text-xs font-bold text-white flex items-center justify-center gap-1.5 backdrop-blur-sm">
-                                <i data-lucide="edit-3" class="w-3.5 h-3.5"></i> Edit
-                            </button>
-                            <button onclick="Wallet.share('${w.walletId}')" title="Bagikan QR" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition flex items-center justify-center text-fgc-lime">
-                                <i data-lucide="share-2" class="w-4 h-4"></i>
-                            </button>
-                            <button onclick="Wallet.deleteWallet('${w.walletId}')" title="Hapus" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-500/20 active:scale-95 transition flex items-center justify-center text-fgc-softred">
-                                <i data-lucide="trash-2" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-                    </div>
-                `}).join('');
-
-                document.getElementById('wallet-full-list').innerHTML = listHtml;
+                        `}).join('');
+                    }
+                }
                 lucide.createIcons();
             },
 
@@ -1969,7 +2082,7 @@
                 document.getElementById('edit-wallet-id').value = w.walletId;
                 document.getElementById('form-wallet-name').value = w.name;
                 document.getElementById('form-wallet-type').value = w.type || 'E-Wallet';
-                document.getElementById('form-wallet-balance').value = w.currentBalance;
+                document.getElementById('form-wallet-balance').value = w.currentBalance || 0;
 
                 const modal = document.getElementById('wallet-modal');
                 const content = document.getElementById('wallet-modal-content');
@@ -1983,53 +2096,62 @@
                 setTimeout(() => document.getElementById('wallet-modal').classList.add('hidden'), 250);
             },
 
-            handleSave: (e) => {
+            handleSave: async (e) => {
                 e.preventDefault();
                 const id = document.getElementById('edit-wallet-id').value;
-                const name = document.getElementById('form-wallet-name').value;
+                const name = document.getElementById('form-wallet-name').value.trim();
                 const type = document.getElementById('form-wallet-type').value;
                 const balance = parseFloat(document.getElementById('form-wallet-balance').value) || 0;
 
-                if (id) {
-                    const w = App.state.wallets.find(x => x.walletId === id);
-                    if (w) {
-                        w.name = name;
-                        w.type = type;
-                        w.currentBalance = balance;
-                    }
-                    App.utils.showToast("Wallet diperbarui");
-                } else {
-                    const newW = {
-                        walletId: 'W' + (App.state.wallets.length + 1),
-                        name: name,
-                        type: type,
-                        currentBalance: balance,
-                        initialBalance: balance,
-                        transactionsCount: 0,
-                        incomeMonth: 0,
-                        expenseMonth: 0
-                    };
-                    App.state.wallets.push(newW);
-                    App.utils.showToast("Wallet baru ditambahkan");
+                if (!name) {
+                    App.utils.showToast("Nama wallet wajib diisi!", true);
+                    return;
                 }
 
-                App.utils.saveAllState();
-                Wallet.closeModal();
-                Wallet.fetchList();
-                Report.fetchDashboard();
+                App.utils.showLoader(id ? 'Memperbarui wallet...' : 'Membuat wallet...');
+                try {
+                    if (id) {
+                        await Api.call('updateWallet', {
+                            walletId: id,
+                            name: name,
+                            type: type,
+                            initialBalance: balance
+                        });
+                        App.utils.showToast("Wallet diperbarui");
+                    } else {
+                        await Api.call('createWallet', {
+                            name: name,
+                            type: type,
+                            initialBalance: balance
+                        });
+                        App.utils.showToast("Wallet baru ditambahkan");
+                    }
+
+                    Wallet.closeModal();
+                    await App.syncData();
+                } catch (err) {
+                    App.utils.showToast("Gagal menyimpan wallet: " + err.message, true);
+                } finally {
+                    App.utils.hideLoader();
+                }
             },
 
-            deleteWallet: (walletId) => {
-                if (App.state.wallets.length <= 1) {
+            deleteWallet: async (walletId) => {
+                if ((App.state.wallets || []).length <= 1) {
                     App.utils.showToast("Minimal harus memiliki 1 wallet!", true);
                     return;
                 }
                 if (confirm("Hapus wallet ini? Data transaksi terkait tetap aman.")) {
-                    App.state.wallets = App.state.wallets.filter(w => w.walletId !== walletId);
-                    App.utils.saveAllState();
-                    Wallet.fetchList();
-                    Report.fetchDashboard();
-                    App.utils.showToast("Wallet berhasil dihapus");
+                    App.utils.showLoader('Menghapus wallet...');
+                    try {
+                        await Api.call('deleteWallet', { walletId });
+                        App.utils.showToast("Wallet berhasil dihapus");
+                        await App.syncData();
+                    } catch (err) {
+                        App.utils.showToast("Gagal menghapus wallet: " + err.message, true);
+                    } finally {
+                        App.utils.hideLoader();
+                    }
                 }
             },
 
@@ -2081,13 +2203,10 @@
             join: async (token) => {
                 App.utils.showLoader('Bergabung ke wallet...');
                 try {
-                    if (!App.config.API_URL.includes('PLACEHOLDER')) {
-                        await Api.call('joinWallet', { inviteToken: token });
-                    }
+                    await Api.call('joinWallet', { inviteToken: token });
                     App.utils.showToast('Berhasil bergabung ke Wallet!');
                     window.history.replaceState({}, document.title, window.location.pathname);
-                    Report.fetchDashboard();
-                    Wallet.fetchList();
+                    await App.syncData();
                 } catch (err) {
                     App.utils.showToast('Gagal join: ' + err.message, true);
                     window.history.replaceState({}, document.title, window.location.pathname);
@@ -2120,9 +2239,14 @@
 
                 // Populate wallet options
                 const sel = document.getElementById('tx-wallet');
-                sel.innerHTML = App.state.wallets.map(w => `
-                    <option value="${w.walletId}">${w.name} (${App.utils.formatRp(w.currentBalance)})</option>
-                `).join('');
+                const wallets = App.state.wallets || [];
+                if (!wallets.length) {
+                    sel.innerHTML = '<option value="">(Belum ada wallet)</option>';
+                } else {
+                    sel.innerHTML = wallets.map(w => `
+                        <option value="${w.walletId}">${w.name} (${App.utils.formatRp(w.currentBalance || 0)})</option>
+                    `).join('');
+                }
 
                 // Render Category Chips
                 Transaction.renderCategoryChips();
@@ -2160,13 +2284,18 @@
 
             renderCategoryChips: () => {
                 const currentType = document.getElementById('tx-type').value;
-                const cats = App.state.categories.filter(c => c.type === currentType);
+                const cats = (App.state.categories || []).filter(c => c.type === currentType);
                 const container = document.getElementById('tx-category-chips');
 
                 if (!Transaction.selectedCategoryId || !cats.some(c => c.id === Transaction.selectedCategoryId)) {
                     Transaction.selectedCategoryId = cats[0]?.id || null;
                 }
                 document.getElementById('tx-category-id').value = Transaction.selectedCategoryId || '';
+
+                if (!cats.length) {
+                    container.innerHTML = '<p class="text-xs text-gray-400 py-1">Belum ada kategori untuk tipe ini.</p>';
+                    return;
+                }
 
                 container.innerHTML = cats.map(c => {
                     const isSelected = c.id === Transaction.selectedCategoryId;
@@ -2184,88 +2313,63 @@
                 document.getElementById('tx-category-id').value = catId;
                 Transaction.renderCategoryChips();
 
-                // Auto-fill description if empty
                 const desc = document.getElementById('tx-desc');
                 if (!desc.value.trim()) {
                     desc.value = catName;
                 }
             },
 
-            handleSubmit: (e) => {
+            handleSubmit: async (e) => {
                 e.preventDefault();
                 const type = document.getElementById('tx-type').value;
                 const amount = parseFloat(document.getElementById('tx-amount').value);
                 const walletId = document.getElementById('tx-wallet').value;
                 const categoryId = document.getElementById('tx-category-id').value;
-                const desc = document.getElementById('tx-desc').value;
+                const desc = document.getElementById('tx-desc').value.trim();
                 const date = document.getElementById('tx-date').value || new Date().toISOString();
 
                 if (!amount || amount <= 0) {
                     App.utils.showToast("Masukkan nominal transaksi!", true);
                     return;
                 }
-
-                const cat = App.state.categories.find(c => c.id === categoryId) || { name: 'Umum', icon: '💵' };
-                const wallet = App.state.wallets.find(w => w.walletId === walletId);
-
-                // Update saldo wallet
-                if (wallet) {
-                    if (type === 'income') {
-                        wallet.currentBalance += amount;
-                        wallet.incomeMonth = (wallet.incomeMonth || 0) + amount;
-                    } else {
-                        wallet.currentBalance -= amount;
-                        wallet.expenseMonth = (wallet.expenseMonth || 0) + amount;
-                    }
-                    wallet.transactionsCount = (wallet.transactionsCount || 0) + 1;
+                if (!walletId) {
+                    App.utils.showToast("Pilih wallet!", true);
+                    return;
                 }
 
-                // Tambah record transaksi
-                const newTx = {
-                    transactionId: 'TX' + Date.now(),
-                    walletId: walletId,
-                    walletName: wallet ? wallet.name : 'Wallet',
-                    type: type,
-                    amount: amount,
-                    categoryId: categoryId,
-                    categoryName: cat.name,
-                    categoryIcon: cat.icon,
-                    description: desc,
-                    date: new Date(date).toISOString()
-                };
+                App.utils.showLoader('Mencatat transaksi...');
+                try {
+                    await Api.call('createTransaction', {
+                        walletId: walletId,
+                        type: type,
+                        amount: amount,
+                        categoryId: categoryId,
+                        description: desc,
+                        date: new Date(date).toISOString()
+                    });
 
-                App.state.transactions.unshift(newTx);
-                App.utils.saveAllState();
-
-                App.utils.showToast("Transaksi berhasil dicatat!");
-                Transaction.closeModal();
-
-                // Refresh active view
-                Report.fetchDashboard();
-                Wallet.fetchList();
-                if (document.getElementById('view-stats').classList.contains('active')) {
-                    Report.renderStatsView();
+                    Transaction.closeModal();
+                    App.utils.showToast("Transaksi berhasil dicatat!");
+                    await App.syncData();
+                } catch (err) {
+                    App.utils.showToast("Gagal mencatat transaksi: " + err.message, true);
+                } finally {
+                    App.utils.hideLoader();
                 }
             },
 
-            deleteTx: (txId) => {
+            deleteTx: async (txId) => {
                 if (confirm("Hapus transaksi ini?")) {
-                    const tx = App.state.transactions.find(t => t.transactionId === txId);
-                    if (tx) {
-                        const wallet = App.state.wallets.find(w => w.walletId === tx.walletId);
-                        if (wallet) {
-                            if (tx.type === 'income') {
-                                wallet.currentBalance -= tx.amount;
-                            } else {
-                                wallet.currentBalance += tx.amount;
-                            }
-                        }
+                    App.utils.showLoader('Menghapus transaksi...');
+                    try {
+                        await Api.call('deleteTransaction', { transactionId: txId });
+                        App.utils.showToast("Transaksi dihapus");
+                        await App.syncData();
+                    } catch (err) {
+                        App.utils.showToast("Gagal menghapus: " + err.message, true);
+                    } finally {
+                        App.utils.hideLoader();
                     }
-                    App.state.transactions = App.state.transactions.filter(t => t.transactionId !== txId);
-                    App.utils.saveAllState();
-                    App.utils.showToast("Transaksi dihapus");
-                    Report.fetchDashboard();
-                    Wallet.fetchList();
                 }
             }
         };
@@ -2278,24 +2382,32 @@
             chartCatInstance: null,
 
             fetchDashboard: () => {
-                const wallets = App.state.wallets;
-                const totalBalance = wallets.reduce((sum, w) => sum + Number(w.currentBalance), 0);
+                const wallets = App.state.wallets || [];
+                const totalBalance = wallets.reduce((sum, w) => sum + Number(w.currentBalance || 0), 0);
 
                 // Dashboard Header Balance
-                document.getElementById('dash-balance').innerText = App.utils.formatRp(totalBalance);
-                document.getElementById('dash-wallet-active-count').innerText = `${wallets.length} wallet aktif`;
+                const dBal = document.getElementById('dash-balance');
+                if (dBal) dBal.innerText = App.utils.formatRp(totalBalance);
+                const dCount = document.getElementById('dash-wallet-active-count');
+                if (dCount) dCount.innerText = `${wallets.length} wallet aktif`;
 
                 // Render wallet chips under balance (GoPay, BCA, Tunai)
-                const chipsHtml = wallets.map(w => `
-                    <div class="bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-3.5 py-1.5 flex-shrink-0 flex items-center gap-2 cursor-pointer transition" onclick="Wallet.openTransactions('${w.walletId}')">
-                        <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-3.5 h-3.5 text-fgc-lime"></i>
-                        <div>
-                            <span class="text-[11px] text-fgc-muted font-medium mr-1">${w.name}</span>
-                            <span class="text-xs font-bold text-white">${App.utils.formatRpCompact(w.currentBalance)}</span>
-                        </div>
-                    </div>
-                `).join('');
-                document.getElementById('dash-wallet-chips').innerHTML = chipsHtml;
+                const chipsContainer = document.getElementById('dash-wallet-chips');
+                if (chipsContainer) {
+                    if (!wallets.length) {
+                        chipsContainer.innerHTML = '<span class="text-xs text-fgc-muted py-1">Belum ada wallet aktif.</span>';
+                    } else {
+                        chipsContainer.innerHTML = wallets.map(w => `
+                            <div class="bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-3.5 py-1.5 flex-shrink-0 flex items-center gap-2 cursor-pointer transition" onclick="Wallet.openTransactions('${w.walletId}')">
+                                <i data-lucide="${w.type === 'Bank' ? 'landmark' : (w.type === 'Tunai' ? 'banknote' : 'smartphone')}" class="w-3.5 h-3.5 text-fgc-lime"></i>
+                                <div>
+                                    <span class="text-[11px] text-fgc-muted font-medium mr-1">${w.name}</span>
+                                    <span class="text-xs font-bold text-white">${App.utils.formatRpCompact(w.currentBalance || 0)}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
 
                 // Month calculation for side-by-side cards
                 const now = new Date();
@@ -2305,25 +2417,31 @@
                 let incomeMonth = 0;
                 let expenseMonth = 0;
 
-                App.state.transactions.forEach(t => {
+                (App.state.transactions || []).forEach(t => {
                     const d = new Date(t.date);
                     if (d.getMonth() === curMonth && d.getFullYear() === curYear) {
-                        if (t.type === 'income') incomeMonth += t.amount;
-                        if (t.type === 'expense') expenseMonth += t.amount;
+                        if (t.type === 'income') incomeMonth += Number(t.amount || 0);
+                        if (t.type === 'expense') expenseMonth += Number(t.amount || 0);
                     }
                 });
 
-                document.getElementById('dash-income').innerText = App.utils.formatRpCompact(incomeMonth);
-                document.getElementById('dash-expense').innerText = App.utils.formatRpCompact(expenseMonth);
+                const dInc = document.getElementById('dash-income');
+                if (dInc) dInc.innerText = App.utils.formatRpCompact(incomeMonth);
+                const dExp = document.getElementById('dash-expense');
+                if (dExp) dExp.innerText = App.utils.formatRpCompact(expenseMonth);
                 const monthStr = App.utils.formatMonthYear(now);
-                document.getElementById('dash-income-month').innerText = monthStr;
-                document.getElementById('dash-expense-month').innerText = monthStr;
+                const dIncMonth = document.getElementById('dash-income-month');
+                if (dIncMonth) dIncMonth.innerText = monthStr;
+                const dExpMonth = document.getElementById('dash-expense-month');
+                if (dExpMonth) dExpMonth.innerText = monthStr;
 
                 // Date Label
-                document.getElementById('dash-today-date').innerText = App.utils.formatDateIndo(now);
+                const dDate = document.getElementById('dash-today-date');
+                if (dDate) dDate.innerText = App.utils.formatDateIndo(now);
 
                 // Render Today's Transactions
                 Report.renderDashTodayTransactions();
+                lucide.createIcons();
             },
 
             setDashTxFilter: (type) => {
@@ -2343,26 +2461,33 @@
 
             renderDashTodayTransactions: () => {
                 const filter = App.state.dashTxFilter; // 'expense' | 'income'
-                const todayTxs = App.state.transactions.filter(t => {
+                const now = new Date();
+                const todayTxs = (App.state.transactions || []).filter(t => {
                     const d = new Date(t.date);
-                    const now = new Date();
                     return d.toDateString() === now.toDateString();
                 });
 
                 const expenseTxs = todayTxs.filter(t => t.type === 'expense');
                 const incomeTxs = todayTxs.filter(t => t.type === 'income');
 
-                document.getElementById('badge-count-expense').innerText = expenseTxs.length;
-                document.getElementById('badge-count-income').innerText = incomeTxs.length;
+                const badgeExp = document.getElementById('badge-count-expense');
+                const badgeInc = document.getElementById('badge-count-income');
+                if (badgeExp) badgeExp.innerText = expenseTxs.length;
+                if (badgeInc) badgeInc.innerText = incomeTxs.length;
 
                 const activeList = filter === 'expense' ? expenseTxs : incomeTxs;
-                const activeTotal = activeList.reduce((sum, t) => sum + t.amount, 0);
+                const activeTotal = activeList.reduce((sum, t) => sum + Number(t.amount || 0), 0);
 
-                document.getElementById('dash-summary-label').innerText = filter === 'expense' ? 'Pengeluaran hari ini' : 'Pemasukan hari ini';
-                document.getElementById('dash-summary-total').innerText = App.utils.formatRp(activeTotal);
-                document.getElementById('dash-summary-total').className = `text-base font-extrabold ${filter === 'expense' ? 'text-rose-500' : 'text-emerald-600'}`;
+                const summaryLabel = document.getElementById('dash-summary-label');
+                if (summaryLabel) summaryLabel.innerText = filter === 'expense' ? 'Pengeluaran hari ini' : 'Pemasukan hari ini';
+                const summaryTotal = document.getElementById('dash-summary-total');
+                if (summaryTotal) {
+                    summaryTotal.innerText = App.utils.formatRp(activeTotal);
+                    summaryTotal.className = `text-base font-extrabold ${filter === 'expense' ? 'text-rose-500' : 'text-emerald-600'}`;
+                }
 
                 const listContainer = document.getElementById('dash-today-tx-list');
+                if (!listContainer) return;
                 if (!activeList.length) {
                     listContainer.innerHTML = `
                         <div class="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
@@ -2401,21 +2526,26 @@
                 App.state.statsMode = mode;
                 const btnM = document.getElementById('tab-stat-mingguan');
                 const btnB = document.getElementById('tab-stat-bulanan');
+                const subTitle = document.getElementById('stats-period-subtitle');
+                const rangeLabel = document.getElementById('stats-range-label');
+                const rangeSub = document.getElementById('stats-range-sub');
+                const chartTitle = document.getElementById('chart-io-title');
 
+                const now = new Date();
                 if (mode === 'mingguan') {
-                    btnM.className = "flex-1 py-2 rounded-full text-xs font-bold text-fgc-dark bg-fgc-lime shadow-sm transition";
-                    btnB.className = "flex-1 py-2 rounded-full text-xs font-semibold text-fgc-muted hover:text-white transition";
-                    document.getElementById('stats-period-subtitle').innerText = "Ringkasan mingguan";
-                    document.getElementById('stats-range-label').innerText = "31 Agu – 6 Sep 2026";
-                    document.getElementById('stats-range-sub').innerText = "Minggu ini";
-                    document.getElementById('chart-io-title').innerText = "Masuk vs Keluar — 6 Minggu";
+                    if (btnM) btnM.className = "flex-1 py-2 rounded-full text-xs font-bold text-fgc-dark bg-fgc-lime shadow-sm transition";
+                    if (btnB) btnB.className = "flex-1 py-2 rounded-full text-xs font-semibold text-fgc-muted hover:text-white transition";
+                    if (subTitle) subTitle.innerText = "Ringkasan 7 hari terakhir";
+                    if (rangeLabel) rangeLabel.innerText = "Minggu ini";
+                    if (rangeSub) rangeSub.innerText = App.utils.formatMonthYear(now);
+                    if (chartTitle) chartTitle.innerText = "Masuk vs Keluar — 6 Minggu";
                 } else {
-                    btnB.className = "flex-1 py-2 rounded-full text-xs font-bold text-fgc-dark bg-fgc-lime shadow-sm transition";
-                    btnM.className = "flex-1 py-2 rounded-full text-xs font-semibold text-fgc-muted hover:text-white transition";
-                    document.getElementById('stats-period-subtitle').innerText = "Ringkasan bulanan";
-                    document.getElementById('stats-range-label').innerText = "September 2026";
-                    document.getElementById('stats-range-sub').innerText = "Bulan ini";
-                    document.getElementById('chart-io-title').innerText = "Masuk vs Keluar — 6 Bulan";
+                    if (btnB) btnB.className = "flex-1 py-2 rounded-full text-xs font-bold text-fgc-dark bg-fgc-lime shadow-sm transition";
+                    if (btnM) btnM.className = "flex-1 py-2 rounded-full text-xs font-semibold text-fgc-muted hover:text-white transition";
+                    if (subTitle) subTitle.innerText = "Ringkasan bulan ini";
+                    if (rangeLabel) rangeLabel.innerText = App.utils.formatMonthYear(now);
+                    if (rangeSub) rangeSub.innerText = "Bulan ini";
+                    if (chartTitle) chartTitle.innerText = "Masuk vs Keluar — 6 Bulan";
                 }
                 Report.renderStatsView();
             },
@@ -2429,127 +2559,214 @@
             },
 
             renderStatsView: () => {
-                // Sesuai screenshot Image 1:
-                // Pemasukan: Rp1.905.000, Pengeluaran: Rp770.000, Selisih: +Rp1.135.000
-                let inc = 1905000;
-                let exp = 770000;
-                let diff = inc - exp;
+                const txs = App.state.transactions || [];
+                const now = new Date();
+                const mode = App.state.statsMode; // 'mingguan' | 'bulanan'
 
-                document.getElementById('stat-income-val').innerText = App.utils.formatRp(inc);
-                document.getElementById('stat-expense-val').innerText = App.utils.formatRp(exp);
-                document.getElementById('stat-diff-val').innerText = '+' + App.utils.formatRp(diff);
+                let inc = 0;
+                let exp = 0;
 
-                // Render Chart 1: Masuk vs Keluar (Dual Bar with rounded corners)
-                const ctxIO = document.getElementById('chart-io').getContext('2d');
-                if (Report.chartIOInstance) Report.chartIOInstance.destroy();
+                if (mode === 'bulanan') {
+                    const curM = now.getMonth();
+                    const curY = now.getFullYear();
+                    txs.forEach(t => {
+                        const d = new Date(t.date);
+                        if (d.getMonth() === curM && d.getFullYear() === curY) {
+                            if (t.type === 'income') inc += Number(t.amount || 0);
+                            if (t.type === 'expense') exp += Number(t.amount || 0);
+                        }
+                    });
+                } else {
+                    // 7 hari terakhir
+                    const sevenDaysAgo = new Date(now.getTime() - 7 * 86400000);
+                    txs.forEach(t => {
+                        const d = new Date(t.date);
+                        if (d >= sevenDaysAgo) {
+                            if (t.type === 'income') inc += Number(t.amount || 0);
+                            if (t.type === 'expense') exp += Number(t.amount || 0);
+                        }
+                    });
+                }
 
-                Report.chartIOInstance = new Chart(ctxIO, {
-                    type: 'bar',
-                    data: {
-                        labels: ['27 Jul', '3 Agu', '10 Agu', '17 Agu', '24 Agu', '31 Agu'],
-                        datasets: [
-                            {
-                                label: 'Masuk',
-                                data: [0, 0, 0, 800000, 7200000, 1905000],
-                                backgroundColor: '#6ee7b7', // Mint green
-                                borderRadius: 8,
-                                barPercentage: 0.6,
-                                categoryPercentage: 0.7
+                const diff = inc - exp;
+
+                const elInc = document.getElementById('stat-income-val');
+                const elExp = document.getElementById('stat-expense-val');
+                const elDiff = document.getElementById('stat-diff-val');
+                if (elInc) elInc.innerText = App.utils.formatRp(inc);
+                if (elExp) elExp.innerText = App.utils.formatRp(exp);
+                if (elDiff) elDiff.innerText = (diff >= 0 ? '+' : '-') + App.utils.formatRp(Math.abs(diff));
+
+                // Render Chart 1: Masuk vs Keluar (Dual Bar)
+                const chartCanvas = document.getElementById('chart-io');
+                if (chartCanvas) {
+                    const ctxIO = chartCanvas.getContext('2d');
+                    if (Report.chartIOInstance) Report.chartIOInstance.destroy();
+
+                    const labels = [];
+                    const incData = [];
+                    const expData = [];
+                    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Juli', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+
+                    for (let i = 5; i >= 0; i--) {
+                        if (mode === 'bulanan') {
+                            const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+                            labels.push(monthNames[d.getMonth()]);
+                            let mInc = 0, mExp = 0;
+                            txs.forEach(t => {
+                                const td = new Date(t.date);
+                                if (td.getMonth() === d.getMonth() && td.getFullYear() === d.getFullYear()) {
+                                    if (t.type === 'income') mInc += Number(t.amount || 0);
+                                    if (t.type === 'expense') mExp += Number(t.amount || 0);
+                                }
+                            });
+                            incData.push(mInc);
+                            expData.push(mExp);
+                        } else {
+                            const startDay = new Date(now.getTime() - (i * 7 + 6) * 86400000);
+                            const endDay = new Date(now.getTime() - (i * 7) * 86400000);
+                            labels.push(`${endDay.getDate()} ${monthNames[endDay.getMonth()]}`);
+                            let wInc = 0, wExp = 0;
+                            txs.forEach(t => {
+                                const td = new Date(t.date);
+                                if (td >= startDay && td <= endDay) {
+                                    if (t.type === 'income') wInc += Number(t.amount || 0);
+                                    if (t.type === 'expense') wExp += Number(t.amount || 0);
+                                }
+                            });
+                            incData.push(wInc);
+                            expData.push(wExp);
+                        }
+                    }
+
+                    Report.chartIOInstance = new Chart(ctxIO, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: 'Masuk',
+                                    data: incData,
+                                    backgroundColor: '#6ee7b7',
+                                    borderRadius: 8,
+                                    barPercentage: 0.6,
+                                    categoryPercentage: 0.7
+                                },
+                                {
+                                    label: 'Keluar',
+                                    data: expData,
+                                    backgroundColor: '#fca5a5',
+                                    borderRadius: 8,
+                                    barPercentage: 0.6,
+                                    categoryPercentage: 0.7
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: (ctx) => ` ${ctx.dataset.label}: ${App.utils.formatRp(ctx.raw)}`
+                                    }
+                                }
                             },
-                            {
-                                label: 'Keluar',
-                                data: [0, 0, 0, 450000, 1200000, 770000],
-                                backgroundColor: '#fca5a5', // Soft pink/red
-                                borderRadius: 8,
-                                barPercentage: 0.6,
-                                categoryPercentage: 0.7
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: (ctx) => ` ${ctx.dataset.label}: ${App.utils.formatRp(ctx.raw)}`
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: (val) => App.utils.formatRpCompact(val),
+                                        font: { size: 10, weight: '600', family: 'Plus Jakarta Sans' },
+                                        color: '#9ca3af'
+                                    },
+                                    grid: { color: '#f3f4f6' },
+                                    border: { dash: [4, 4] }
+                                },
+                                x: {
+                                    grid: { display: false },
+                                    ticks: { font: { size: 10, weight: '600', family: 'Plus Jakarta Sans' }, color: '#6b7280' }
                                 }
                             }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 10000000,
-                                ticks: {
-                                    callback: (val) => {
-                                        if (val === 10000000) return 'Rp10jt';
-                                        if (val === 5000000) return 'Rp5jt';
-                                        if (val === 0) return 'Rp0';
-                                        return '';
-                                    },
-                                    font: { size: 10, weight: '600', family: 'Plus Jakarta Sans' },
-                                    color: '#9ca3af'
-                                },
-                                grid: { color: '#f3f4f6' },
-                                border: { dash: [4, 4] }
-                            },
-                            x: {
-                                grid: { display: false },
-                                ticks: { font: { size: 10, weight: '600', family: 'Plus Jakarta Sans' }, color: '#6b7280' }
-                            }
                         }
-                    }
-                });
+                    });
+                }
 
                 // Render Chart 2: Pengeluaran per Kategori (Donut)
-                const ctxCat = document.getElementById('chart-cat').getContext('2d');
-                if (Report.chartCatInstance) Report.chartCatInstance.destroy();
+                const catCanvas = document.getElementById('chart-cat');
+                if (catCanvas) {
+                    const ctxCat = catCanvas.getContext('2d');
+                    if (Report.chartCatInstance) Report.chartCatInstance.destroy();
 
-                const catLabels = ['Makanan', 'Bensin', 'Jajan', 'Belanja', 'Lainnya'];
-                const catIcons = ['🍔', '⛽', '🧋', '🛍️', '📦'];
-                const catData = [350000, 150000, 120000, 100000, 50000];
-                const catColors = ['#bef226', '#34d399', '#38bdf8', '#fbbf24', '#f87171'];
+                    const catMap = {};
+                    txs.filter(t => t.type === 'expense').forEach(t => {
+                        const catName = t.categoryName || 'Lainnya';
+                        const catIcon = t.categoryIcon || '📦';
+                        if (!catMap[catName]) {
+                            catMap[catName] = { amount: 0, icon: catIcon };
+                        }
+                        catMap[catName].amount += Number(t.amount || 0);
+                    });
 
-                Report.chartCatInstance = new Chart(ctxCat, {
-                    type: 'doughnut',
-                    data: {
-                        labels: catLabels,
-                        datasets: [{
-                            data: catData,
-                            backgroundColor: catColors,
-                            borderWidth: 3,
-                            borderColor: '#ffffff'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        cutout: '72%',
-                        plugins: {
-                            legend: { display: false }
+                    let catLabels = Object.keys(catMap);
+                    let catData = catLabels.map(k => catMap[k].amount);
+                    let catIcons = catLabels.map(k => catMap[k].icon);
+                    const defaultColors = ['#bef226', '#34d399', '#38bdf8', '#fbbf24', '#f87171', '#a78bfa', '#ec4899', '#f97316'];
+
+                    const hasData = catLabels.length > 0;
+                    if (!hasData) {
+                        catLabels = ['Belum ada pengeluaran'];
+                        catData = [1];
+                        catIcons = ['ℹ️'];
+                    }
+
+                    Report.chartCatInstance = new Chart(ctxCat, {
+                        type: 'doughnut',
+                        data: {
+                            labels: catLabels,
+                            datasets: [{
+                                data: catData,
+                                backgroundColor: !hasData ? ['#e5e7eb'] : defaultColors.slice(0, catLabels.length),
+                                borderWidth: 3,
+                                borderColor: '#ffffff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            cutout: '72%',
+                            plugins: {
+                                legend: { display: false }
+                            }
+                        }
+                    });
+
+                    // Breakdown list under donut
+                    const totalCatExp = hasData ? catData.reduce((a, b) => a + b, 0) : 0;
+                    const breakdownWrap = document.getElementById('stats-category-breakdown');
+                    if (breakdownWrap) {
+                        if (!hasData) {
+                            breakdownWrap.innerHTML = '<p class="text-xs text-gray-400 text-center py-3">Belum ada data pengeluaran yang tercatat.</p>';
+                        } else {
+                            breakdownWrap.innerHTML = catLabels.map((name, i) => {
+                                const pct = totalCatExp > 0 ? Math.round((catData[i] / totalCatExp) * 100) : 0;
+                                return `
+                                    <div class="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
+                                        <div class="flex items-center gap-2.5">
+                                            <span class="text-base">${catIcons[i]}</span>
+                                            <span class="text-xs font-bold text-fgc-dark">${name}</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs font-semibold text-gray-500">${pct}%</span>
+                                            <span class="text-xs font-black text-fgc-dark">${App.utils.formatRp(catData[i])}</span>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('');
                         }
                     }
-                });
-
-                // Breakdown list under donut
-                const totalCatExp = catData.reduce((a, b) => a + b, 0);
-                const breakdownHtml = catLabels.map((name, i) => {
-                    const pct = Math.round((catData[i] / totalCatExp) * 100);
-                    return `
-                        <div class="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
-                            <div class="flex items-center gap-2.5">
-                                <span class="text-base">${catIcons[i]}</span>
-                                <span class="text-xs font-bold text-fgc-dark">${name}</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-semibold text-gray-500">${pct}%</span>
-                                <span class="text-xs font-black text-fgc-dark">${App.utils.formatRp(catData[i])}</span>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-                document.getElementById('stats-category-breakdown').innerHTML = breakdownHtml;
+                }
             }
         };
 
